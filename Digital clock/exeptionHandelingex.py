@@ -4,6 +4,7 @@
 #     print("Name error occured")
 # except ArithmeticError:
 #     print("error occured")
+
 # finally:
 #     print("Welcome")
 

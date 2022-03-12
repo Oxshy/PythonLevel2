@@ -1,5 +1,4 @@
 from tkinter import *
-from turtle import color
 from time import strftime
 root=Tk()
 root.title("Akshay Digital clock")
