@@ -27,8 +27,20 @@ def summary(update,context):
         print("getting...")
         data=response.json()
         date=data["Date"][0:10]
-        answer=date
+        answer=f"Coivd19 summary as of {date}: \n"
         print(date)
+        print(data["Global"])
+        for att,val in data["Global"].items():
+            if att not in["Date","NewRecovered","TotalRecovered"]:
+                print(att,":",val)
+                answer+=att+":"+str(val)+"\n"
+        answer+="-----------------------------------------------------------------\n"
+        # print(data["Countries"][77])
+        dictIndia=dict(data["Countries"][77])
+        print(dictIndia)
+        for inatt, inval in dictIndia.items():
+            if inatt not in["Date","NewRecovered","TotalRecovered","ID","Slug","CountryCode","Premium"]:
+                answer+=inatt+":"+str(inval)+"\n"
         context.bot.send_message(chat_id=update.effective_chat.id,text=answer)
     else:
         print("error somthing has gone wrong")
