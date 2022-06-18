@@ -208,7 +208,6 @@ def checker(digit):
         msg.showinfo("Reusult:","Its a tie")
         root.destroy()
 
-
  
         
 
